@@ -1,0 +1,43 @@
+@import "textpage";
+.service {
+    margin-bottom: 20px;
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+
+        &--filter {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            right: 0;
+            width: 256px;
+            height: 0px;
+            margin: 0 15px;
+            background-color: $ducati__red;
+            opacity: .5;
+            transition: height ease-in .5s;
+        }
+
+        &:hover {
+            .service__item--filter {
+                height: 113px;
+            }
+        }
+
+        &--image {
+            width: 100%;
+        }
+
+        &--head {
+            position: absolute;
+            margin: 0;
+            bottom: 20px;
+            left: 30px;
+            @include media_font_size(30px);
+            color: #fff;
+            text-transform: uppercase;
+            @extend %bold;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.footer {
+    background-color: $footer_background;
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    @include media_font_size(18px, xs);
+    @include media-breakpoint-down(xs) {
+        font-size: 14px;
+    }
+
+    &__container {
+        display: block;
+    }
+
+    &__block {
+        display: block;
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: center;
+        color: $footer_color;
+
+        .row {
+            margin: 0;
+        }
+
+        &--offerta {
+            @include media-breakpoint-down(xs) {
+                padding: 0 14px;
+            }
+            @extend %regular;
+            font-size: .8em;
+        }
+
+        &--link {
+            @extend %bold;
+            color: $footer_color;
+            text-decoration: none;
+            font-size: 1em;
+            @include media-breakpoint-down(xs) {
+                display: block;
+                &:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &:hover {
+                color: $ducati__red;
+            }
+        }
+
+        &--copyright {
+            @extend %regular;
+            font-size: .8em;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.models__banner{
+    position: relative;
+    @include media-breakpoint-down(md){
+        &.container{
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &--image{
+        width: 100%;
+    }
+    &__content{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        color: #fff;
+        line-height: 1;
+        @include media_font_size(26px);
+        @include media-breakpoint-down(md){
+            left: 15px;
+            top:20px
+        }
+        &--head{
+            @extend %bold;
+            font-size: $head_font_size;
+            margin: 0;
+        }
+        &--text{
+            @extend %regular;
+            font-size: .8em;
+        }
+    }
+    .btn__banner{
+        left: 50px;
+    }
+    @include media-breakpoint-down(md){
+        .btn__banner{
+            bottom: 20px;
+            left: 15px;
+        }
+    }
+
+}

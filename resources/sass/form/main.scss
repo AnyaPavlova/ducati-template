@@ -1,0 +1,100 @@
+@import "inpage";
+@import "select2";
+
+.form-group {
+    display: block;
+    margin: 20px 0;
+    &--vertical{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+    }
+    &__content{
+        @include media_font_size(24px, xs);
+        @include media-breakpoint-down(xs){
+            font-size: 18px;
+        }
+        @extend %regular;
+        &--head{
+            text-align: center;
+        }
+    }
+    &--radio{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+.input-element {
+    width: 100%;
+    @include media_font_size(24px);
+    @extend %regular;
+    &::placeholder{
+        color: #a5a5a5;
+    }
+    &__broken{
+        //color: #d10000;
+        border-color: #d10000;
+        &::placeholder{
+            color: #d10000;
+        }
+    }
+    color: #000000;
+    padding: 22px 25px;
+    border: $input__border;
+    @include media-breakpoint-down(xs){
+        padding: 16px 16px;
+    }
+}
+
+input[type=checkbox], input[type=radio] {
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+%checkbox {
+    content: "";
+    width: 25px;
+    height: 25px;
+    opacity: 1;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: -5px;
+}
+
+label {
+    @extend %regular;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+input[type=checkbox]:not(:checked) + label:before {
+    background-image: url("/images/not_checked.png");;
+    @extend %checkbox;
+}
+
+input[type=checkbox]:checked + label:before {
+    background-image: url("/images/checked.png");
+    @extend %checkbox;
+}
+
+
+input[type=radio]+label{
+    display: inline-block;
+    border: $input__border;
+    padding: 22px 25px;
+    background-color: #fff;
+    color: $input__color;
+    width: 45%;
+    text-align: center;
+    @include media-breakpoint-down(xs){
+        padding: 10px 25px;
+        margin-left: -30px;
+    }
+}
+input[type=radio]:checked + label{
+    border-color: #000;
+    color: #000;
+}

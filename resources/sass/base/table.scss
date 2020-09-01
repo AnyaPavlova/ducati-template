@@ -1,0 +1,33 @@
+$table_border: 1px solid #bebebe;
+.table {
+    border-collapse: collapse;
+    font-size: 16px;
+    @extend %regular;
+
+    .table__row {
+        display: block;
+        &.mobile_only{
+            display: none;
+            @include media-breakpoint-down(xs){
+                display: block;
+            }
+        }
+    }
+
+
+    tr:first-child {
+        td {
+            border-top: $table_border;
+        }
+    }
+
+    td {
+        &:first-child {
+            width: 30%;
+        }
+
+        padding: 30px 0;
+        line-height: 1.2;
+        border-bottom: $table_border;
+    }
+}

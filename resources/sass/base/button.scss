@@ -1,0 +1,28 @@
+.btn {
+    display: block;
+    color: #fff;
+    @extend %cursor;
+    background:linear-gradient(180deg, #f80000 35%, #d40000 100%);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    @include media_font_size(18px, xs);
+    @include media-breakpoint-down(xs) {
+        font-size: 14px;
+    }
+    @extend %bold;
+    &:hover{
+        background-color: #e80000;
+
+    }
+    &-default{
+        background: transparent;
+        border: 1px solid #999999;
+        color: #666666;
+        &:hover{
+            background-color: transparent;
+        }
+    }
+}

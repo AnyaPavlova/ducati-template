@@ -1,0 +1,61 @@
+.showcase {
+    margin: 40px 0;
+
+    &__item {
+        cursor: pointer;
+        @include media_font_size(22px);
+
+        &--head {
+            font-size: $head_font_size;
+            @extend %regular;
+            color: $text_color;
+            margin: 0;
+        }
+
+        &--image {
+            max-width: 100%;
+        }
+
+        &--fullsize {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            @include ie_media() {
+                display: block;
+            }
+        }
+
+        &--container {
+            height: 144px;
+            @include media-breakpoint-down(xs) {
+                height: 85px;
+            }
+        }
+
+        &--price {
+            font-size: $base_font_size;
+            @extend %regular;
+            color: $text_color;
+            text-align: center;
+        }
+
+        transition: transform ease-in-out .5s;
+
+        &:hover {
+            transform: translateY(-30px);
+
+            .btn__showcase {
+                visibility: visible;
+                max-height: 300px;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.btn__showcase {
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all ease-in-out .5s;
+}

@@ -1,0 +1,11 @@
+.icon{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    &__map{
+        background:url("/images/pin-3.png") center center no-repeat;
+    }
+    &__phone{
+        background:url("/images/phone-call.png") center center no-repeat;
+    }
+}

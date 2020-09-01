@@ -1,0 +1,35 @@
+@import "mixin";
+@import "~normalize.css/normalize.css";
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~tiny-slider/src/tiny-slider";
+@import "~@fancyapps/fancybox/dist/jquery.fancybox.css";
+@import "base/main";
+@import "common/main";
+@import "banner/main";
+@import "model/main";
+@import "service/main";
+@import "form/main";
+@import "modal/main";
+@import "contacts/map";
+@import "showcase/main";
+@import "moto/main";
+html,body{
+    background-color: #fafafa;
+}
+@include media-breakpoint-down(md){
+    .no_mobile{
+        display: none !important;
+    }
+}
+.mobile_only{
+    @include media-breakpoint-up(md){
+        display: none!important;
+    }
+    @include media-breakpoint-down(md){
+        display: initial;
+    }
+}
+
+[data-href]{
+    @extend %cursor;
+}

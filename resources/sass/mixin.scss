@@ -1,0 +1,83 @@
+@use "sass:list";
+
+@mixin ie_media() {
+  @media (-ms-high-contrast: none), screen and (-ms-high-contrast: active) {
+    @content
+  }
+}
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face-generator($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+          eot: "?",
+          svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+          otf: "opentype",
+          ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+/**
+ Автогенерация размеров шрифтов в зависимости от размера viewport
+ */
+@mixin media_font_size($px_size,$exclude:null){
+    $lists: xl,lg,md,sm,xs;
+    @each $list in $lists{
+        @if(not list.index($exclude,$list)){
+            @include media-breakpoint-down($list){
+                font-size: $px_size - (list.index($lists,$list) - 1)*2;
+            }
+        }
+    }
+}
+//@mixin media_font_size($px_size) {
+//  @include media-breakpoint-down(xl) {
+//    font-size: $px_size;
+//  }
+//  @include media-breakpoint-down(lg) {
+//    font-size: $px_size - 2px;
+//  }
+//  @include media-breakpoint-down(md) {
+//    font-size: $px_size - 4px;
+//  }
+//  @include media-breakpoint-down(sm) {
+//    font-size: $px_size - 6px;
+//  }
+//  @include media-breakpoint-down(xs) {
+//    font-size: $px_size - 8px
+//  }
+//}
+
+@mixin shadow($color){
+  box-shadow: 0 6px 24px 0 $color;
+}

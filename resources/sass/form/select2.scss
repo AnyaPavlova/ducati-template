@@ -1,0 +1,102 @@
+@import "~select2/dist/css/select2.css";
+
+.select2-container {
+    width: 100% !important;
+    z-index: 100000;
+    @extend %cursor;
+}
+
+.select2-container--default {
+    @extend %cursor;
+    .select2-selection--single {
+        height: 73px;
+        @include media-breakpoint-down(xs){
+            height: 52px;
+        }
+        border-radius: 0;
+        border: $input__border;
+    }
+    .select2-results{
+        > .select2-results__options{
+            &::-webkit-scrollbar{
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track{
+                background-color: #e7e7e7;
+            }
+            &::-webkit-scrollbar-thumb{
+                background-color: #000;
+                border-radius: 5px;
+            }
+        }
+    }
+    .select2-results__option {
+        padding: 0px 23px;
+        &[aria-selected=true]{
+            background-color: #f5f5f5;
+        }
+
+        &.select2-results__option--highlighted {
+            background: none;
+
+            .selected__item {
+                background-color: #f5f5f5;
+                padding-left: 23px;
+                color: $ducati__gray;
+            }
+        }
+    }
+
+    .select2-selection--single {
+        padding-top: 10px;
+        .select2-selection__placeholder{
+            display: block;
+            @extend %regular;
+            color: #c0c0c0;
+            @include media_font_size(24px);
+            padding: 10px 20px;
+            @include media-breakpoint-down(xs){
+                padding: 0 20px;
+            }
+        }
+        .select2-selection__rendered{
+
+            .selected__item{
+                border-bottom: none;
+                padding-left: 20px;
+                @include media-breakpoint-down(xs){
+                    padding: 0 20px;
+                }
+            }
+        }
+        .select2-selection__arrow {
+            top: 50%;
+            transform: translateY(-50%);
+            right: 24px;
+
+            b {
+                width: 19px;
+                height: 10px;
+                border: none;
+                background: url("/images/dropdown.png") center center no-repeat;
+            }
+        }
+    }
+}
+
+.selected__item {
+    @extend %cursor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $input__border;
+    padding: 10px 0;
+    @include media_font_size(24px, xs);
+    padding-right: 30px;
+    &--text {
+        font-size: 1em;
+        color: $ducati__gray;
+        @extend %regular;
+    }
+}

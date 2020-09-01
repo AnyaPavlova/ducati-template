@@ -1,0 +1,77 @@
+.banner__static {
+    position: relative;
+    @include media-breakpoint-down(xs) {
+        //position: relative;
+        overflow: hidden;
+        min-height: 300px;
+        margin-bottom: 10px;
+        .banner__static__content{
+            left: 15px;
+        }
+        .btn__banner{
+            left: 15px;
+        }
+    }
+
+    &__first {
+        @include media-breakpoint-down(xs) {
+            .btn__banner {
+                position: initial;
+                top: initial;
+            }
+            .banner__static__content--big{
+                margin-top: 50px;
+                position: initial;
+                .banner__static-head, .banner__static-text {
+                    color: $ducati__gray;
+                }
+            }
+        }
+    }
+
+    &__content, &__content--big {
+        position: absolute;
+        //top:10px;
+        left: 65px;
+        @include media_font_size(26px)
+    }
+
+    &__content {
+        top: 45px;
+    }
+
+    &__content--big {
+        top: 85px;
+    }
+
+    &__image {
+        max-width: 100%;
+        //@include media-breakpoint-down(xs) {
+        //    transform: scale(1.7) translateX(-50px);
+        //}
+        img{
+            width: 100%;
+        }
+    }
+
+    &-head {
+        font-size: $head_font_size;
+        @extend %bold;
+        color: #fff;
+        margin-top: 0;
+    }
+
+    &-text {
+        font-size: $base_font_size;
+        @extend %regular;
+        color: #fff;
+    }
+}
+
+.btn__banner {
+    position: absolute;
+    left: 65px;
+    bottom: 40px;
+    min-width: 200px;
+    text-transform: uppercase;
+}

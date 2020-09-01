@@ -1,0 +1,84 @@
+.header {
+    position: absolute;
+    z-index: 100;
+    top:30px;
+    width: 100%;
+    background-color: transparent;
+    &.header__fixed{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0;
+        .header__container{
+            width: 100%;
+            border-radius: 0px;
+        }
+    }
+    &__logo{
+        max-height: 80px;
+        @include media-breakpoint-down(xs){
+            max-height: 36px;
+        }
+    }
+    &__container {
+        padding: 25px 50px;
+        border-radius: 5px;
+        box-shadow:0 6px 24px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        transition: width ease-in .1s;
+        @include media-breakpoint-down(xs){
+            width: 95%;
+            padding: 10px 10px;
+        }
+        &__block{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &--head {
+            @extend %bold;
+            @include media_font_size(26px);
+            color: $ducati__gray;
+            margin:0 0 10px 0;
+            @include media-breakpoint-down(xs){
+                margin: 0;
+            }
+        }
+        &--icon{
+            @include media-breakpoint-down(xs){
+                &:first-child{
+                    margin-right: 10px;
+                }
+            }
+        }
+        &--text{
+            @extend %regular;
+            font-size: 14px;
+            color: $ducati__gray;
+        }
+        &--inline{
+            display: block;
+            float: left;
+            width: 49%;
+            padding: 0 5px;
+        }
+        &--link{
+            display: block;
+            @extend %bold;
+            text-decoration: none;
+            color: $ducati__gray;
+            font-size: 18px;
+        }
+        &--address{
+            display: block;
+            @extend %regular;
+            color: $ducati__gray;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import "header";
+@import "footer";
+.main{
+    min-height: 80vh;
+    &__page{
+        margin-top: 200px;
+        @include media-breakpoint-down(xs){
+            margin-top: 120px;
+        }
+    }
+}

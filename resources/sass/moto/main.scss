@@ -1,0 +1,119 @@
+.breadcrumbs {
+    @extend %container80;
+    margin: 40px auto;
+
+    &__item {
+        @extend %bold;
+        font-size: 14px;
+        color: #777777;
+    }
+}
+
+.moto {
+    @extend %regular;
+    color: #1f1f1f;
+    @include media_font_size(26px);
+
+    &--image {
+        max-width: 100%;
+    }
+
+    &--head {
+        @extend %bold;
+        font-size: 1.2em;
+    }
+
+    &--price {
+        @extend %bold;
+        font-size: 1.5em;
+    }
+
+    &--gray_bounty {
+        @extend %regular;
+        color: #808890;
+        font-size: .7em;
+    }
+
+    &__list {
+        list-style-image: url("/images/list.png");
+        font-size: 16px;
+        @extend %bold;
+        margin: 0;
+        padding-left: 20px;
+
+        &--item {
+            margin-bottom: 15px;
+        }
+    }
+
+    &--btn {
+        width: 70%;
+        padding: 20px;
+        text-transform: uppercase;
+        @include media-breakpoint-down(xs) {
+            padding: 20px 10px;
+            font-size: 12px;
+            &:first-child {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &--little-text {
+        display: block;
+        font-size: 16px;
+        color: #1d1f20;
+        margin: 20px 0 40px;
+    }
+
+    &__data {
+        font-size: 24px;
+
+        &--head {
+            @extend %bold;
+            font-size: $head_font_size;
+            text-align: center;
+        }
+        .read__more{
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            padding: 15px 0;
+            border-top: black 1px solid;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        &--text {
+            @extend %regular;
+            font-size: .7em;
+            @include media-breakpoint-down(md){
+                max-height: 300px;
+                transition: max-height ease-in .5s;
+                &.view_full{
+                    max-height: 2000px;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        &--mobile {
+            &__rotate {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            &__inline {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+
+
+

@@ -1,0 +1,40 @@
+.callback__form{
+    &--testdrive{
+        margin-bottom: 80px;
+    }
+    &-container{
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+        @include media-breakpoint-down(xs){
+            width: 100%;
+        }
+    }
+    &--head{
+        @extend %bold;
+        text-align: center;
+        @include media_font_size(30px);
+    }
+    &--text{
+        font-size: 18px;
+        @extend %regular;
+        text-align: center;
+        color: #666666;
+        margin: 25px 0;
+    }
+    &--submit{
+        display: block;
+        margin: 10px auto;
+        min-width: 200px;
+    }
+    &__label{
+        @include media_font_size(24px,xs);
+        @include media-breakpoint-down(xs){
+            font-size: 18px;
+        }
+        @extend %regular;
+        &--gray{
+            color:#666666;
+        }
+    }
+}
