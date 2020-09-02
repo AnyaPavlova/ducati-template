@@ -71,12 +71,12 @@ label {
 }
 
 input[type=checkbox]:not(:checked) + label:before {
-    background-image: url("/images/not_checked.png");;
+    background-image: url("../../images/not_checked.png");;
     @extend %checkbox;
 }
 
 input[type=checkbox]:checked + label:before {
-    background-image: url("/images/checked.png");
+    background-image: url("../../images/checked.png");
     @extend %checkbox;
 }
 

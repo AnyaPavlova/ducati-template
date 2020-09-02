@@ -35,7 +35,7 @@
     }
 
     &__list {
-        list-style-image: url("/images/list.png");
+        list-style-image: url("../../images/list.png");
         font-size: 16px;
         @extend %bold;
         margin: 0;
