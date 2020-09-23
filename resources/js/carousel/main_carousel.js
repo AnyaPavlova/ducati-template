@@ -14,4 +14,18 @@ export const CAROUSEL = _ => {
             preventScrollOnTouch:"auto"
         });
     }
+
+     if(document.querySelector(".moto-slider__slider")){
+        const main_slider = tns({
+            container: ".moto-slider__slider",
+            items: 1,
+            mouseDrag:true,
+            prevButton:".banner__controls-el.prev",
+            nextButton:".banner__controls-el.next",
+            autoHeight:true,
+            nav:true,
+            navPosition:"bottom",
+            preventScrollOnTouch:"auto"
+        });
+    }
 }

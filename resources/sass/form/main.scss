@@ -25,6 +25,10 @@
         flex-direction: row;
         justify-content: space-between;
     }
+
+    &--stocks {
+        margin: 20px 0 30px;
+    }
 }
 .input-element {
     width: 100%;
@@ -45,6 +49,18 @@
     border: $input__border;
     @include media-breakpoint-down(xs){
         padding: 16px 16px;
+    }
+
+    &--stocks {
+        text-transform: uppercase;
+        border: 0;
+        outline: none !important;
+        border-bottom: 1px solid #c0c0c0;
+        padding: 20px 0 10px;
+
+        &:focus {
+            border-bottom-color: #000;
+        }
     }
 }
 
