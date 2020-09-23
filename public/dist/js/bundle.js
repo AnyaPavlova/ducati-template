@@ -45689,6 +45689,20 @@ const CAROUSEL = _ => {
       preventScrollOnTouch: "auto"
     });
   }
+
+  if (document.querySelector(".moto-slider__slider")) {
+    const main_slider = Object(tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__["tns"])({
+      container: ".moto-slider__slider",
+      items: 1,
+      mouseDrag: true,
+      prevButton: ".banner__controls-el.prev",
+      nextButton: ".banner__controls-el.next",
+      autoHeight: true,
+      nav: true,
+      navPosition: "bottom",
+      preventScrollOnTouch: "auto"
+    });
+  }
 };
 
 /***/ }),
